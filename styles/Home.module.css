@@ -23,6 +23,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  object-fit: contain;
 }
 
 .footer img {
@@ -111,7 +112,16 @@
 }
 
 .logo {
-  height: 1em;
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+.imgWrapper {
+  width: 250px;
+  height: 50px;
+  background-color: #0070f3;
+  object-fit: cover;
 }
 
 @media (max-width: 600px) {
