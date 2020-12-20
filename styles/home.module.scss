@@ -1,6 +1,5 @@
 .content {
   width: 100vw;
-  max-width: 1200px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -9,6 +8,7 @@
 
 .header {
   width: 100%;
+  max-width: 1200px;
   height: 100px;
   display: flex;
   justify-content: center;
@@ -41,6 +41,7 @@
 
 .hero {
   width: 100%;
+  max-width: 1200px;
   margin-top: 100px;
   display: flex;
   flex-direction: column;
@@ -102,6 +103,199 @@
 
     &:hover {
       background-color: var(--pink);
+    }
+  }
+}
+
+.projects {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .projectTitle {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+
+  .projectSubTitle {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .projectInfo {
+    width: 60%;
+    font-size: 16px;
+    color: var(--white);
+    margin-bottom: 25px;
+    line-height: 1.5;
+  }
+
+  .techContainer {
+    margin-bottom: 50px;
+    font-weight: bold;
+    font-size: 14px;
+
+    .techIcon {
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+  }
+
+  .buttonContainer {
+    display: flex;
+
+    .projectButton {
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+      padding: 10px 20px;
+      border: 2px solid var(--white);
+      color: var(--white);
+      font-size: 18px;
+      font-weight: bold;
+      font-family: Poppins, sans-serif;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      margin: 0 10px;
+
+      .buttonIcon {
+        margin-right: 10px;
+        transition: all 0.2s ease;
+      }
+    }
+  }
+
+
+  .projectRow {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+
+    .rowLeft1 {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      background-color: var(--blue);
+      color: var(--white);
+
+      .rowLeftText {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-right: 80px;
+        text-align: right;
+
+        .projectButton:hover {
+          background-color: var(--white);
+          color: var(--blue);
+  
+          .buttonIcon {
+            color: var(--blue) !important;
+          }
+        }
+      }
+
+    }
+
+    .rowRight1 {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      .imageWrapper {
+        margin-left: 80px;
+        box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+      }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////
+    .rowRight2 {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: var(--violet);
+      color: var(--white);
+
+      .rowRightText {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 80px;
+        text-align: left;
+
+        .projectButton:hover {
+          background-color: var(--white);
+          color: var(--violet);
+  
+          .buttonIcon {
+            color: var(--violet) !important;
+          }
+        }
+      }
+
+    }
+
+    .rowLeft2 {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+
+      .imageWrapper {
+        margin-right: 80px;
+        box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+      }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////
+
+    .rowLeft3 {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      background-color: var(--pink);
+      color: var(--white);
+
+      .rowLeftText {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-right: 80px;
+        text-align: right;
+
+        .projectButton:hover {
+          background-color: var(--white);
+          color: var(--pink);
+  
+          .buttonIcon {
+            color: var(--pink) !important;
+          }
+        }
+      }
+
+    }
+
+    .rowRight3 {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      .imageWrapper {
+        margin-left: 80px;
+        box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+      }
     }
   }
 }

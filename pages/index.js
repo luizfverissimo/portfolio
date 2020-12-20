@@ -1,17 +1,28 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Lottie from 'react-lottie';
-import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faGithub,
+  faReact,
+  faNodeJs
+} from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from '../styles/home.module.scss';
-import animationData from '../public/lotties/lf30_editor_w6g77lum.json';
+import programingAnimationData from '../public/lotties/programing.json';
+import scrollDownAnimationData from '../public/lotties/arrow-down.json';
 
 export default function Home() {
-  const lottieOption = {
+  const lottieOptionPrograming = {
     loop: true,
     autoplay: true,
-    animationData: animationData
+    animationData: programingAnimationData
+  };
+  const lottieOptionScrollDown = {
+    loop: true,
+    autoplay: true,
+    animationData: scrollDownAnimationData
   };
 
   return (
@@ -49,24 +60,190 @@ export default function Home() {
               <p>Solving problems through code.</p>
             </div>
             <div className={styles.heroImg}>
-              <Lottie options={lottieOption} width={450} height={450} />
+              <Lottie
+                options={lottieOptionPrograming}
+                width={450}
+                height={450}
+              />
               <span className={styles.bgCircle} />
             </div>
           </div>
 
           <a className={styles.projectsBtn}>
-            <FontAwesomeIcon
-              icon={faAngleDoubleDown}
-              color='#fafafa'
-              width={24}
-              height={24}
-            />
+            <Lottie options={lottieOptionScrollDown} width={32} height={32} />
             <p>My Projects</p>
           </a>
         </section>
         <section className={styles.projects}>
           <div className={styles.projectRow}>
-            <h2>Offers Aggregator</h2>
+            <div className={styles.rowLeft1}>
+              <div className={styles.rowLeftText}>
+                <h2 className={styles.projectTitle}>
+                  Offers <br /> Aggregator
+                </h2>
+                <p className={styles.projectSubTitle}>FullStack Project</p>
+                <p className={styles.projectInfo}>
+                  An Offers/Coupons aggregator build with full administration
+                  dashboard.
+                </p>
+
+                <div className={styles.techContainer}>
+                  <p>Tech's:</p>
+                  <div>
+                    <FontAwesomeIcon
+                      icon={faReact}
+                      width={32}
+                      height={32}
+                      className={styles.techIcon}
+                    />
+                    <FontAwesomeIcon
+                      icon={faNodeJs}
+                      width={32}
+                      height={32}
+                      className={styles.techIcon}
+                    />
+                  </div>
+                </div>
+
+                <div className={styles.buttonContainer}>
+                  <button className={styles.projectButton}>
+                    <FontAwesomeIcon
+                      icon={faGithub}
+                      color='#fafafa'
+                      width={24}
+                      height={24}
+                      className={styles.buttonIcon}
+                    />
+                    View the code
+                  </button>
+                  <button className={styles.projectButton}>
+                    <FontAwesomeIcon
+                      icon={faExternalLinkAlt}
+                      color='#fafafa'
+                      width={24}
+                      height={24}
+                      className={styles.buttonIcon}
+                    />
+                    Launch the site
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className={styles.rowRight1}>
+              <div className={styles.imageWrapper}>
+                <Image src='/offersfull.png' width={785} height={400} />
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.projectRow}>
+            <div className={styles.rowLeft2}>
+              <div className={styles.imageWrapper}>
+                <Image src='/dicefull.png' width={598} height={400} />
+              </div>
+            </div>
+            <div className={styles.rowRight2}>
+              <div className={styles.rowRightText}>
+                <h2 className={styles.projectTitle}>
+                  RPG Dice <br /> Roller
+                </h2>
+                <p className={styles.projectSubTitle}>React Native Project</p>
+                <p className={styles.projectInfo}>
+                  An Offers/Coupons aggregator build with full administration
+                  dashboard.
+                </p>
+
+                <div className={styles.techContainer}>
+                  <p>Tech's:</p>
+                  <div>
+                    <FontAwesomeIcon
+                      icon={faReact}
+                      width={32}
+                      height={32}
+                      className={styles.techIcon}
+                    />
+                  </div>
+                </div>
+
+                <div className={styles.buttonContainer}>
+                  <button className={styles.projectButton}>
+                    <FontAwesomeIcon
+                      icon={faExternalLinkAlt}
+                      color='#fafafa'
+                      width={24}
+                      height={24}
+                      className={styles.buttonIcon}
+                    />
+                    Launch the app
+                  </button>
+                  <button className={styles.projectButton}>
+                    <FontAwesomeIcon
+                      icon={faGithub}
+                      color='#fafafa'
+                      width={24}
+                      height={24}
+                      className={styles.buttonIcon}
+                    />
+                    View the code
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.projectRow}>
+            <div className={styles.rowLeft3}>
+              <div className={styles.rowLeftText}>
+                <h2 className={styles.projectTitle}>
+                  Truco <br /> Scoreboard
+                </h2>
+                <p className={styles.projectSubTitle}>React Native Project</p>
+                <p className={styles.projectInfo}>
+                  An Offers/Coupons aggregator build with full administration
+                  dashboard.
+                </p>
+
+                <div className={styles.techContainer}>
+                  <p>Tech's:</p>
+                  <div>
+                    <FontAwesomeIcon
+                      icon={faReact}
+                      width={32}
+                      height={32}
+                      className={styles.techIcon}
+                    />
+                  </div>
+                </div>
+
+                <div className={styles.buttonContainer}>
+                  <button className={styles.projectButton}>
+                    <FontAwesomeIcon
+                      icon={faGithub}
+                      color='#fafafa'
+                      width={24}
+                      height={24}
+                      className={styles.buttonIcon}
+                    />
+                    View the code
+                  </button>
+                  <button className={styles.projectButton}>
+                    <FontAwesomeIcon
+                      icon={faExternalLinkAlt}
+                      color='#fafafa'
+                      width={24}
+                      height={24}
+                      className={styles.buttonIcon}
+                    />
+                    Launch the app
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className={styles.rowRight3}>
+              <div className={styles.imageWrapper}>
+                <Image src='/trucofull.png' width={617} height={400} />
+              </div>
+            </div>
           </div>
         </section>
       </main>
