@@ -1,13 +1,21 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Lottie from 'react-lottie';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faExternalLinkAlt,
+  faDatabase
+} from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
   faReact,
-  faNodeJs
+  faNodeJs,
+  faDiscord
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import Modal from '../components/Modal';
+import ProjectLeft from '../components/ProjectLeft';
+import ProjectRight from '../components/ProjectRight';
 
 import styles from '../styles/home.module.scss';
 import programingAnimationData from '../public/lotties/programing.json';
@@ -31,6 +39,8 @@ export default function Home() {
         <title>LF Verissimo | FullStack Developer</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
+      {/* <Modal/> */}
+
       <main className={styles.content}>
         <section className={styles.header}>
           <header className={styles.navBar}>
@@ -43,8 +53,8 @@ export default function Home() {
             </a>
             <nav className={styles.navButtonsWrapper}>
               <a>Home</a>
-              <a>Projects</a>
-              <a>About</a>
+              <a href='#projects-section'>Projects</a>
+              <a href='#about'>About</a>
               <a>Contact</a>
             </nav>
           </header>
@@ -69,180 +79,149 @@ export default function Home() {
             </div>
           </div>
 
-          <a className={styles.projectsBtn}>
+          <a className={styles.projectsBtn} href='#projects-section'>
             <Lottie options={lottieOptionScrollDown} width={32} height={32} />
             <p>My Projects</p>
           </a>
         </section>
-        <section className={styles.projects}>
-          <div className={styles.projectRow}>
-            <div className={styles.rowLeft1}>
-              <div className={styles.rowLeftText}>
-                <h2 className={styles.projectTitle}>
-                  Offers <br /> Aggregator
-                </h2>
-                <p className={styles.projectSubTitle}>FullStack Project</p>
-                <p className={styles.projectInfo}>
-                  An Offers/Coupons aggregator build with full administration
-                  dashboard.
-                </p>
+        <section className={styles.projects} id='projects-section'>
+          <ProjectLeft
+            backgroundColorStyle='blue'
+            titleFirstLine='Offers'
+            titleSecondLine='Aggregator'
+            subTitle='FullStack Project'
+            projectInfo='An Offers/Coupons aggregator build with full administration dashboard do manage the offers, users and affiliate links, created with Next.js and deployed at Vercel.'
+            imgSrc='/offersfull.png'
+            imgWidth={785}
+            imgHeight={400}
+            codeHref='#'
+            onCLickOpenProject={() => {}}
+            reactIcon
+            nodeIcon
+          />
+          <ProjectRight
+            backgroundColorStyle='violet'
+            titleFirstLine='RPG Dice'
+            titleSecondLine='Roller'
+            subTitle='React Native Project'
+            projectInfo='Application created to facilitate dice rolls in an RPG game, with the option of save rolls to speed the gameplay.'
+            imgSrc='/dicefull.png'
+            imgWidth={598}
+            imgHeight={400}
+            codeHref='#'
+            onCLickOpenProject={() => {}}
+            reactIcon
+            isApp
+          />
+          <ProjectLeft
+            backgroundColorStyle='pink'
+            titleFirstLine='Truco'
+            titleSecondLine='Scoretracker'
+            subTitle='React Native Project'
+            projectInfo='A scoretracker for the Truco card game and the App keep the history of past matches.'
+            imgSrc='/trucofull.png'
+            imgWidth={617}
+            imgHeight={400}
+            codeHref='#'
+            onCLickOpenProject={() => {}}
+            reactIcon
+            isApp
+          />
+          <ProjectRight
+            backgroundColorStyle='blue'
+            titleFirstLine='Boardgame'
+            titleSecondLine='Companion App'
+            subTitle='React Native Project'
+            projectInfo='An App Companion for the 221B Baker Street (Scotland Yard in pt-BR), the app facilitate the reading of the clues.'
+            imgSrc='/scotlandfull.png'
+            imgWidth={615}
+            imgHeight={400}
+            codeHref='#'
+            onCLickOpenProject={() => {}}
+            reactIcon
+            isApp
+          />
 
-                <div className={styles.techContainer}>
-                  <p>Tech's:</p>
-                  <div>
-                    <FontAwesomeIcon
-                      icon={faReact}
-                      width={32}
-                      height={32}
-                      className={styles.techIcon}
-                    />
-                    <FontAwesomeIcon
-                      icon={faNodeJs}
-                      width={32}
-                      height={32}
-                      className={styles.techIcon}
-                    />
-                  </div>
-                </div>
+          <ProjectLeft
+            backgroundColorStyle='violet'
+            titleFirstLine='RPG'
+            titleSecondLine='Discord Bot'
+            subTitle='Backend Project'
+            projectInfo='Text-based RPG created in a ChatBot for Discord. Bot created using Node.js, the Discord.js library and Mongoose for database management.'
+            imgSrc='/discordfull.png'
+            imgWidth={785}
+            imgHeight={400}
+            codeHref='#'
+            onCLickOpenProject={() => {}}
+            nodeIcon
+            discordIcon
+            databaseIcon
+          />
+          <a
+            className={styles.projectsBtn}
+            href='https://github.com/luizfverissimo?tab=repositories'
+            target='_black'
+          >
+            <FontAwesomeIcon
+              icon={faGithub}
+              color='#fafafa'
+              width={24}
+              height={24}
+              className={styles.buttonIcon}
+            />
+            <p>View all projects</p>
+          </a>
+        </section>
 
-                <div className={styles.buttonContainer}>
-                  <button className={styles.projectButton}>
-                    <FontAwesomeIcon
-                      icon={faGithub}
-                      color='#fafafa'
-                      width={24}
-                      height={24}
-                      className={styles.buttonIcon}
-                    />
-                    View the code
-                  </button>
-                  <button className={styles.projectButton}>
-                    <FontAwesomeIcon
-                      icon={faExternalLinkAlt}
-                      color='#fafafa'
-                      width={24}
-                      height={24}
-                      className={styles.buttonIcon}
-                    />
-                    Launch the site
-                  </button>
-                </div>
+        <section className={styles.aboutMe} id='about'>
+          <div className={styles.description}>
+            <div className={styles.descriptionText}>
+              <h2 className={styles.aboutMeTitle}>About me</h2>
+              <p>
+                I’m a self-taught fullstack developer, a geek developer
+                exploring programming dungeons!
+              </p>
+              <div className={styles.likesButtonsContainer}>
+                <Image
+                  src='/dice-icon.svg'
+                  width={52}
+                  height={52}
+                  className={styles.likesBtn}
+                  title='RPG Master'
+                />
+                <Image
+                  src='/sw-icon.svg'
+                  width={52}
+                  height={52}
+                  className={styles.likesBtn}
+                  title='Star Wars Fan'
+                />
+                <Image
+                  src='/game-icon.svg'
+                  width={52}
+                  height={52}
+                  className={styles.likesBtn}
+                  title='FPS Player'
+                />
+                <Image
+                  src='/bg-icon.svg'
+                  width={52}
+                  height={52}
+                  className={styles.likesBtn}
+                  title='Boardgame Player and Collector'
+                />
               </div>
             </div>
-            <div className={styles.rowRight1}>
-              <div className={styles.imageWrapper}>
-                <Image src='/offersfull.png' width={785} height={400} />
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.projectRow}>
-            <div className={styles.rowLeft2}>
-              <div className={styles.imageWrapper}>
-                <Image src='/dicefull.png' width={598} height={400} />
-              </div>
-            </div>
-            <div className={styles.rowRight2}>
-              <div className={styles.rowRightText}>
-                <h2 className={styles.projectTitle}>
-                  RPG Dice <br /> Roller
-                </h2>
-                <p className={styles.projectSubTitle}>React Native Project</p>
-                <p className={styles.projectInfo}>
-                  An Offers/Coupons aggregator build with full administration
-                  dashboard.
-                </p>
-
-                <div className={styles.techContainer}>
-                  <p>Tech's:</p>
-                  <div>
-                    <FontAwesomeIcon
-                      icon={faReact}
-                      width={32}
-                      height={32}
-                      className={styles.techIcon}
-                    />
-                  </div>
-                </div>
-
-                <div className={styles.buttonContainer}>
-                  <button className={styles.projectButton}>
-                    <FontAwesomeIcon
-                      icon={faExternalLinkAlt}
-                      color='#fafafa'
-                      width={24}
-                      height={24}
-                      className={styles.buttonIcon}
-                    />
-                    Launch the app
-                  </button>
-                  <button className={styles.projectButton}>
-                    <FontAwesomeIcon
-                      icon={faGithub}
-                      color='#fafafa'
-                      width={24}
-                      height={24}
-                      className={styles.buttonIcon}
-                    />
-                    View the code
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.projectRow}>
-            <div className={styles.rowLeft3}>
-              <div className={styles.rowLeftText}>
-                <h2 className={styles.projectTitle}>
-                  Truco <br /> Scoreboard
-                </h2>
-                <p className={styles.projectSubTitle}>React Native Project</p>
-                <p className={styles.projectInfo}>
-                  An Offers/Coupons aggregator build with full administration
-                  dashboard.
-                </p>
-
-                <div className={styles.techContainer}>
-                  <p>Tech's:</p>
-                  <div>
-                    <FontAwesomeIcon
-                      icon={faReact}
-                      width={32}
-                      height={32}
-                      className={styles.techIcon}
-                    />
-                  </div>
-                </div>
-
-                <div className={styles.buttonContainer}>
-                  <button className={styles.projectButton}>
-                    <FontAwesomeIcon
-                      icon={faGithub}
-                      color='#fafafa'
-                      width={24}
-                      height={24}
-                      className={styles.buttonIcon}
-                    />
-                    View the code
-                  </button>
-                  <button className={styles.projectButton}>
-                    <FontAwesomeIcon
-                      icon={faExternalLinkAlt}
-                      color='#fafafa'
-                      width={24}
-                      height={24}
-                      className={styles.buttonIcon}
-                    />
-                    Launch the app
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className={styles.rowRight3}>
-              <div className={styles.imageWrapper}>
-                <Image src='/trucofull.png' width={617} height={400} />
-              </div>
+            <div className={styles.avatarContainer}>
+              <Image
+                src='/avatar.jpg'
+                width={270}
+                height={270}
+                className={styles.avatarImage}
+                title='LF Verissimo'
+              />
+              <strong>Based in:</strong>
+              <p> Londrina/PR - Brazil</p>
             </div>
           </div>
         </section>

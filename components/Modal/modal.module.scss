@@ -1,0 +1,48 @@
+.modalBackground {
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow: auto;
+  background-color: rgba(255,255,255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  width: 50%;
+  height: 50%;
+  background-color: var(--white);
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.closeModalBtn {
+  position: absolute;
+  top:-12px;
+  right: -12px;
+  background-color: var(--violet);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 20px;
+  font-weight: bold;
+  border: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--pink);
+  }
+}
