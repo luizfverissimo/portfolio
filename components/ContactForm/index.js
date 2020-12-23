@@ -59,6 +59,7 @@ function ContactForm() {
     } catch (err) {
       console.log(err);
       setStatus('An Error occurred, please resubmit.');
+      spinner.current.style.display = "none"
     }
   };
 
