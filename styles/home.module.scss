@@ -22,7 +22,7 @@
     align-items: center;
 
     .navButtonsWrapper {
-      width: 40%;
+      width: 30%;
       display: flex;
       justify-content: space-between;
 
@@ -179,6 +179,79 @@
       margin-top: 30px;
     }
   }
+
+  .cardsContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+}
+
+.contact {
+  margin-top: 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  h2 {
+    font-size: 54px;
+    font-weight: bold;
+    margin-bottom: 80px;
+  }
+
+  .contactSocialLinks {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 80px;
+
+    .socialLinks {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--violet);
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0 25px;
+      transition: all 0.2s ease;
+
+      .socialIcons {
+        margin: 0 20px;
+        transition: all 0.2s ease;
+      }
+
+      &:hover {
+        color: var(--pink);
+
+        .socialIcons {
+          color: var(--pink) !important;
+        }
+      }
+    }
+  }
+
+  .bgCircleSmall {
+    position: absolute;
+    z-index: -1;
+    top: 300px;
+    right: 22%;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(143.8deg, #fd3a69 13.85%, #9d0191 62.4%);
+  }
+}
+
+.footer {
+  margin-top: 150px;
+  width: 100%;
+  height: 350px;
+  background-color: var(--violet);
 }
 
 

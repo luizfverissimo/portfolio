@@ -29,6 +29,7 @@ function ProjectLeft({
   nodeIcon,
   discordIcon,
   databaseIcon,
+  altImg,
   backgroundColorStyle
 }) {
   const [backgroundColor, setBackgroundColor] = useState(null)
@@ -99,7 +100,7 @@ function ProjectLeft({
             </div>
 
             <div className={styles.buttonContainer}>
-              <a href={codeHref} className={styles.projectButton}>
+              <a href={codeHref} target="_blank" className={styles.projectButton}>
                 <FontAwesomeIcon
                   icon={faGithub}
                   color='#fafafa'
@@ -127,7 +128,7 @@ function ProjectLeft({
         </div>
         <div className={styles.rowRight}>
           <div className={styles.imageWrapper}>
-            <Image src={imgSrc} width={imgWidth} height={imgHeight} />
+            <Image src={imgSrc} width={imgWidth} height={imgHeight} alt={altImg}/>
           </div>
         </div>
       </div>

@@ -1,0 +1,99 @@
+.contactForm {
+  width: 35%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 20px;
+  padding: 50px;
+
+  legend {
+    width: 100%;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  input {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 18px;
+    border: 0;
+    border-bottom: 2px var(--white) solid;
+    background-color: transparent;
+    font-family: "Poppins", sans-serif;
+    color: var(--white);
+    padding: 5px 5px;
+    transition: all 0.2s ease;
+
+    &:focus {
+      border-color: var(--pink);
+      outline: none;
+    }
+  }
+
+  .textAreaInput {
+    width: 100%;
+    height: 200px;
+    border: 2px var(--white) solid;
+    border-radius: 20px;
+    background-color: transparent;
+    color: var(--white);
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    padding: 10px;
+    transition: all 0.2s ease;
+
+    &:focus {
+      border-color: var(--pink);
+      outline: none;
+    }
+  }
+
+  .buttonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 30px;
+
+    p {
+      color: var(--white);
+      margin-right: 10px;
+    }
+
+    .spinner {
+      margin-right: 10px;
+      display: none;
+    }
+
+    button {
+      border: 0;
+      background-color: var(--pink);
+      color: var(--white);
+      font-size: 20px;
+      font-weight: bold;
+      font-family: "Poppins" sans-serif;
+      padding: 15px 30px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      transition: all 0.2s ease;
+      outline: none; 
+
+      .iconSend {
+        margin-right: 10px;
+      }
+
+      &:hover {
+        background-color: var(--white);
+        color: var(--pink);
+
+        .iconSend {
+          color: var(--pink) !important
+        }
+      }
+    }
+  }
+}

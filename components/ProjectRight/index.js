@@ -29,6 +29,7 @@ function ProjectRight({
   nodeIcon,
   discordIcon,
   databaseIcon,
+  altImg,
   backgroundColorStyle
 }) {
   const [backgroundColor, setBackgroundColor] = useState(styles.rowLeftBlue);
@@ -50,7 +51,7 @@ function ProjectRight({
       <div className={styles.projectRow}>
         <div className={styles.rowLeft}>
           <div className={styles.imageWrapper}>
-            <Image src={imgSrc} width={imgWidth} height={imgHeight} />
+            <Image src={imgSrc} width={imgWidth} height={imgHeight} alt={altImg}/>
           </div>
         </div>
         <div className={backgroundColor}>
@@ -117,7 +118,7 @@ function ProjectRight({
                 />
                 Launch the {isApp ? 'app' : 'site'}
               </button>
-              <a href={codeHref} className={styles.projectButton}>
+              <a href={codeHref} target="_blank" className={styles.projectButton}>
                 <FontAwesomeIcon
                   icon={faGithub}
                   color='#fafafa'
