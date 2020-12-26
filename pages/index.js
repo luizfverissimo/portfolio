@@ -35,7 +35,7 @@ export default function Home() {
       {/* <Modal/> */}
 
       <main className={styles.content}>
-        <section className={styles.header}>
+        <section className={styles.header} id='header'>
           <header className={styles.navBar}>
             <a>
               <Image
@@ -289,7 +289,57 @@ export default function Home() {
           <ContactForm />
           <span className={styles.bgCircleSmall} />
         </section>
-        <footer className={styles.footer}></footer>
+        <footer className={styles.footer}>
+          <div className={styles.footerContent}>
+            <div className={styles.logoSocialColumn}>
+              <Image
+                src='/lf_verissimo_logo_dark.svg'
+                width={173}
+                height={21}
+              />
+              <div className={styles.socialIconsContainer}>
+                <a href='https://github.com/luizfverissimo' target='_black'>
+                  <FontAwesomeIcon
+                    icon={faGithub}
+                    color='#fafafa'
+                    width={24}
+                    height={24}
+                    className={styles.socialIcons}
+                  />
+                </a>
+                <a
+                  href='https://www.linkedin.com/in/luiz-fernando-veríssimo-485323164/'
+                  target='_black'
+                >
+                  <FontAwesomeIcon
+                    icon={faLinkedin}
+                    color='#fafafa'
+                    width={24}
+                    height={24}
+                    className={styles.socialIcons}
+                  />
+                </a>
+              </div>
+              <p>Londrina/PR - Brazil</p>
+            </div>
+            <div className={styles.footerNavigation}>
+              <a href='#header'>
+                Back to top
+              </a>
+              <a href='#projects-section'>Projects</a>
+              <a href='#about'>About me</a>
+              <a href='#contact'>Contact</a>
+            </div>
+            <div className={styles.footerNavigation}>
+              <a>Terms of use</a>
+              <a>Privacy Police</a>
+              <a>
+                Resources used
+                <br /> in this site
+              </a>
+            </div>
+          </div>
+        </footer>
       </main>
     </>
   );
