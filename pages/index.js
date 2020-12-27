@@ -323,9 +323,7 @@ export default function Home() {
               <p>Londrina/PR - Brazil</p>
             </div>
             <div className={styles.footerNavigation}>
-              <a href='#header'>
-                Back to top
-              </a>
+              <a href='#header'>Back to top</a>
               <a href='#projects-section'>Projects</a>
               <a href='#about'>About me</a>
               <a href='#contact'>Contact</a>

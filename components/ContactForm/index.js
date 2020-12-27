@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as emailjs from 'emailjs-com';
 import { init } from 'emailjs-com';
 import Lottie from 'react-lottie';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 import styles from './contact.module.scss';
 import spinnerAnimationData from '../../public/lotties/spinner.json';
@@ -19,8 +20,9 @@ function ContactForm() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('');
+  const [isVerified, setIsVerified] = useState(false);
 
-  const spinner = useRef(null)
+  const spinner = useRef(null);
 
   useEffect(() => {
     init(`${process.env.NEXT_PUBLIC_EMAILJS_USER}`);
@@ -28,6 +30,11 @@ function ContactForm() {
 
   const handleSubmitContactForm = async (event) => {
     event.preventDefault();
+    if (!isVerified) {
+      setStatus('Verify reCaptcha field.');
+      return;
+    }
+
     if (name.length === 0 || email.length === 0 || message.length === 0) {
       setStatus('All fields are required.');
       return;
@@ -43,14 +50,14 @@ function ContactForm() {
     }
 
     try {
-      spinner.current.style.display = "block"
+      spinner.current.style.display = 'block';
       await emailjs.send('service_bsg0df3', 'template_xwi0imb', {
         from_name: name,
         from_email: email,
         message: message
       });
 
-      spinner.current.style.display = "none"
+      spinner.current.style.display = 'none';
 
       setStatus('The message was sent, I will reply you soon!');
       setName('');
@@ -59,8 +66,14 @@ function ContactForm() {
     } catch (err) {
       console.log(err);
       setStatus('An Error occurred, please resubmit.');
-      spinner.current.style.display = "none"
+      spinner.current.style.display = 'none';
     }
+  };
+
+  const recaptchaVerify = () => {
+    console.log('verificou');
+    setIsVerified(true);
+    return;
   };
 
   return (
@@ -72,7 +85,6 @@ function ContactForm() {
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
-
       <legend htmlFor='e-mail'>E-mail</legend>
       <input
         type='text'
@@ -80,7 +92,6 @@ function ContactForm() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-
       <legend htmlFor='message'>Message</legend>
       <textarea
         name='message'
@@ -88,7 +99,12 @@ function ContactForm() {
         value={message}
         onChange={(e) => setMessage(e.target.value)}
       />
-
+      <ReCAPTCHA
+        sitekey={process.env.NEXT_PUBLIC_SITE_KEY}
+        onChange={recaptchaVerify}
+        theme="dark"
+        hl="en"
+      />
       <div className={styles.buttonContainer}>
         <p>{status}</p>
         <div ref={spinner} className={styles.spinner}>
