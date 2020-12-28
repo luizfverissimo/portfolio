@@ -74,8 +74,8 @@ export default function Home() {
             <div className={styles.heroImgMobile}>
               <Lottie
                 options={lottieOptionPrograming}
-                width={350}
-                height={350}
+                width={300}
+                height={300}
               />
               <span className={styles.bgCircle} />
             </div>
