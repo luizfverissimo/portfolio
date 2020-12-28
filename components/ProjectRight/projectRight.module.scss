@@ -1,3 +1,11 @@
+$mobile: 1100px;
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
 .projectTitle {
   font-size: 36px;
   font-weight: bold;
@@ -30,6 +38,11 @@
 
 .buttonContainer {
   display: flex;
+  
+  @include mobile  {
+    flex-direction: column;
+    align-items: center;
+  }
 
   .projectButton {
     display: flex;
@@ -47,6 +60,10 @@
     margin-right: 20px;
     transition: all 0.2s ease;
 
+    @include mobile {
+      margin-bottom: 20px;
+    }
+
     .buttonIcon {
       margin-right: 10px;
       transition: all 0.2s ease;
@@ -60,13 +77,25 @@
   align-items: flex-start;
   margin-left: 80px;
   text-align: left;
+
+  @include mobile {
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 .projectRow {
   width: 100vw;
-  height: 500px;
+  min-height: 500px;
   display: flex;
   justify-content: center;
+
+  @include mobile{
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 
   .rowRightBlue {
     width: 50%;
@@ -75,6 +104,11 @@
     justify-content: flex-start;
     background-color: var(--blue);
     color: var(--white);
+
+    @include mobile {
+      width: 100%;
+      padding: 30px 0;
+    }
 
     .projectButton:hover {
       background-color: var(--white);
@@ -94,6 +128,11 @@
     background-color: var(--violet);
     color: var(--white);
 
+    @include mobile {
+      width: 100%;
+      padding: 30px 0;
+    }
+
     .projectButton:hover {
       background-color: var(--white);
       color: var(--violet);
@@ -112,6 +151,11 @@
     background-color: var(--pink);
     color: var(--white);
 
+    @include mobile {
+      width: 100%;
+      padding: 30px 0;
+    }
+
     .projectButton:hover {
       background-color: var(--white);
       color: var(--pink);
@@ -129,9 +173,20 @@
     justify-content: center;
     align-items: flex-end;
 
+    @include mobile {
+      width: 100%;
+      padding: 30px 0;
+      align-items: center;
+    }
+
     .imageWrapper {
       margin-right: 80px;
       box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+
+      @include mobile {
+        margin-left: 0;
+        margin: 10px;
+      }
     }
   }
 }

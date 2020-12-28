@@ -1,3 +1,18 @@
+$mobile: 1100px;
+$mobile-small: 400px;
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin mobile-small {
+  @media (max-width: #{$mobile-small}) {
+    @content;
+  }
+}
+
 .content {
   width: 100vw;
   min-height: 100vh;
@@ -14,6 +29,10 @@
   justify-content: center;
   align-items: center;
 
+  @include mobile {
+    max-width: unset;
+  }
+
   .navBar {
     width: 100%;
     height: 100%;
@@ -21,10 +40,18 @@
     justify-content: space-between;
     align-items: center;
 
+    @include mobile {
+      justify-content: center;
+    }
+
     .navButtonsWrapper {
       width: 30%;
       display: flex;
       justify-content: space-between;
+
+      @include mobile {
+        display: none;
+      }
 
       a {
         font-size: 20px;
@@ -47,22 +74,54 @@
   flex-direction: column;
   align-items: center;
 
+  @include mobile {
+    max-width: unset;
+    margin-top: 30px;
+  }
+
   .heroContent {
     width: 100%;
     display: flex;
     justify-content: space-between;
 
+    @include mobile {
+      flex-direction: column;
+      justify-self: unset;
+      align-items: center;
+    }
+
     .heroText {
       width: 50%;
+
+      @include mobile {
+        width: 100%;
+        text-align: center;
+        margin: 0 50px;
+      }
 
       h1 {
         font-size: 64px;
         font-weight: bold;
         margin-bottom: 25px;
+
+        @include mobile {
+          font-size: 54px;
+        }
+
+        @include mobile-small {
+          font-size: 44px;
+        }
       }
 
       p {
         font-size: 64px;
+
+        @include mobile {
+          font-size: 54px;
+        }
+        @include mobile-small {
+          font-size: 44px;
+        }
       }
     }
 
@@ -70,6 +129,15 @@
       width: 50%;
       padding-top: 150px;
       position: relative;
+
+      @include mobile {
+        width: 100%;
+        padding-top: 50px;
+      }
+
+      @include mobile-small {
+        display: none;
+      }
 
       .bgCircle {
         position: absolute;
@@ -80,6 +148,39 @@
         height: 570px;
         border-radius: 50%;
         background: linear-gradient(143.8deg, #fd3a69 13.85%, #9d0191 62.4%);
+
+        @include mobile {
+          left: 0;
+          width: 370px;
+          height: 370px;
+        }
+      }
+    }
+
+    .heroImgMobile {
+      display: none;
+
+      @include mobile-small {
+        display: flex;
+        width: 100%;
+        padding-top: 50px;
+        position: relative;
+
+        .bgCircle {
+          @include mobile-small {
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            width: 270px;
+            height: 270px;
+            border-radius: 50%;
+            background: linear-gradient(
+              143.8deg,
+              #fd3a69 13.85%,
+              #9d0191 62.4%
+            );
+          }
+        }
       }
     }
   }
@@ -125,6 +226,10 @@
   flex-direction: column;
   align-items: center;
 
+  @include mobile {
+    height: unset;
+  }
+
   .description {
     width: 100%;
     max-width: 1200px;
@@ -133,6 +238,10 @@
     align-items: flex-start;
     justify-content: space-around;
 
+    @include mobile {
+      flex-direction: column;
+    }
+
     .descriptionText {
       width: 50%;
       display: flex;
@@ -140,14 +249,29 @@
       align-items: flex-end;
       text-align: right;
 
+      @include mobile {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+      }
+
       .aboutMeTitle {
         font-size: 54px;
         font-weight: bold;
         margin-bottom: 50px;
+
+        @include mobile-small {
+          font-size: 44px;
+        }
       }
 
       p {
         font-size: 36px;
+
+        @include mobile-small {
+          font-size: 30px;
+          margin: 0 10px;
+        }
       }
 
       .likesButtonsContainer {
@@ -156,8 +280,8 @@
         justify-content: space-between;
         margin-top: 40px;
 
-        .likesBtn {
-          box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+        @include mobile {
+          display: none;
         }
       }
     }
@@ -169,6 +293,11 @@
     flex-direction: column;
     align-items: center;
     font-size: 18px;
+
+    @include mobile {
+      width: 100%;
+      margin: 50px 0;
+    }
 
     .avatarImage {
       border-radius: 50%;
@@ -187,6 +316,20 @@
     justify-content: center;
     align-items: center;
     margin-top: 50px;
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.mobileCarousel {
+  display: none;
+
+  @include mobile {
+    display: flex;
+    width: 100%;
+    margin-top: 50px;
   }
 }
 
@@ -198,10 +341,18 @@
   align-items: center;
   position: relative;
 
+  @include mobile {
+    margin-top: 100px;
+  }
+
   h2 {
     font-size: 54px;
     font-weight: bold;
     margin-bottom: 80px;
+
+    @include mobile-small {
+      font-size: 44px;
+    }
   }
 
   .contactSocialLinks {
@@ -209,6 +360,10 @@
     align-items: center;
     flex-direction: row;
     margin-bottom: 80px;
+
+    @include mobile {
+      flex-direction: column;
+    }
 
     .socialLinks {
       display: flex;
@@ -219,6 +374,10 @@
       font-weight: bold;
       margin: 0 25px;
       transition: all 0.2s ease;
+
+      @include mobile {
+        margin: 10px 0;
+      }
 
       .socialIcons {
         margin: 0 20px;
@@ -244,6 +403,10 @@
     height: 300px;
     border-radius: 50%;
     background: linear-gradient(143.8deg, #fd3a69 13.85%, #9d0191 62.4%);
+
+    @include mobile {
+      display: none;
+    }
   }
 }
 
@@ -258,11 +421,22 @@
   justify-content: center;
   color: var(--white);
 
+  @include mobile {
+    height: unset;
+    margin-top: 50px;
+  }
+
   .footerContent {
     width: 100%;
     max-width: 1200px;
     display: flex;
     justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      margin-top: 50px;
+    }
 
     a {
       color: var(--white);
@@ -272,6 +446,13 @@
     }
 
     .logoSocialColumn {
+      @include mobile {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 25px 0;
+      }
       .socialIconsContainer {
         margin: 10px 0;
 
@@ -286,12 +467,13 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      
+      @include mobile {
+        margin-bottom: 25px;
+      }
+
       a {
         margin-bottom: 10px;
       }
     }
   }
 }
-
-

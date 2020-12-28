@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Lottie from 'react-lottie';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Carousel from 'nuka-carousel';
 
 import Modal from '../components/Modal';
 import ProjectLeft from '../components/ProjectLeft';
@@ -67,6 +68,14 @@ export default function Home() {
                 options={lottieOptionPrograming}
                 width={450}
                 height={450}
+              />
+              <span className={styles.bgCircle} />
+            </div>
+            <div className={styles.heroImgMobile}>
+              <Lottie
+                options={lottieOptionPrograming}
+                width={350}
+                height={350}
               />
               <span className={styles.bgCircle} />
             </div>
@@ -254,6 +263,52 @@ export default function Home() {
             />
           </div>
         </section>
+        <div className={styles.mobileCarousel}>
+            <Carousel
+              defaultControlsConfig={{
+                nextButtonStyle: {
+                  display: 'none'
+                },
+                prevButtonStyle: {
+                  display: 'none'
+                },
+                pagingDotsStyle: {
+                  display: "none"
+                }
+              }}
+              cellAlign='left'
+              cellSpacing={30}
+              slideWidth='300px'
+              disableEdgeSwiping={true}
+              transitionMode='scroll'
+              // opacityScale={0.3}
+            >
+              <Card
+                imgSrc='/card-dragon.svg'
+                imgWidth={83}
+                imgHeight={83}
+                altImg='FullStack Applications'
+                cardTitle='FullStack Applications'
+                cardText='Build full application to fulfil your goals.'
+              />
+              <Card
+                imgSrc='/card-sword.svg'
+                imgWidth={83}
+                imgHeight={83}
+                altImg='Web Design'
+                cardTitle='Web Design'
+                cardText='Make your brand standout in the web.'
+              />
+              <Card
+                imgSrc='/card-quill.svg'
+                imgWidth={83}
+                imgHeight={83}
+                altImg='Mobile Applications'
+                cardTitle='Mobile Applications'
+                cardText='Make your idea available on Android and iOS devices'
+              />
+            </Carousel>
+          </div>
         <section className={styles.contact} id='contact'>
           <h2>Contact</h2>
           <div className={styles.contactSocialLinks}>
