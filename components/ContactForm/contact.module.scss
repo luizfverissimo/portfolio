@@ -35,7 +35,7 @@ $mobile: 1100px;
     border: 0;
     border-bottom: 2px var(--white) solid;
     background-color: transparent;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: var(--white);
     padding: 5px 5px;
     transition: all 0.2s ease;
@@ -54,7 +54,7 @@ $mobile: 1100px;
     background-color: transparent;
     color: var(--white);
     font-size: 18px;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
     padding: 10px;
     margin-bottom: 20px;
     transition: all 0.2s ease;
@@ -72,14 +72,29 @@ $mobile: 1100px;
     align-items: center;
     margin-top: 30px;
 
+    @include mobile {
+      flex-direction: column-reverse;
+      justify-self: flex-start;
+    }
+
     p {
       color: var(--white);
       margin-right: 10px;
+
+      @include mobile {
+        margin-right: 0;
+        margin-top: 20px;
+      }
     }
 
     .spinner {
       margin-right: 10px;
       display: none;
+
+      @include mobile {
+        margin-right: 0;
+        margin-top: 20px;
+      }
     }
 
     button {
@@ -88,13 +103,13 @@ $mobile: 1100px;
       color: var(--white);
       font-size: 20px;
       font-weight: bold;
-      font-family: "Poppins" sans-serif;
+      font-family: 'Poppins' sans-serif;
       padding: 15px 30px;
       border-radius: 20px;
       display: flex;
       align-items: center;
       transition: all 0.2s ease;
-      outline: none; 
+      outline: none;
 
       .iconSend {
         margin-right: 10px;
@@ -105,7 +120,7 @@ $mobile: 1100px;
         color: var(--pink);
 
         .iconSend {
-          color: var(--pink) !important
+          color: var(--pink) !important;
         }
       }
     }
