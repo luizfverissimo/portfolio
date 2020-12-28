@@ -1,5 +1,5 @@
 $mobile: 1100px;
-$mobile-small: 400px;
+$mobile-small: 450px;
 
 @mixin mobile {
   @media (max-width: #{$mobile}) {
@@ -131,8 +131,7 @@ $mobile-small: 400px;
       position: relative;
 
       @include mobile {
-        width: 100%;
-        padding-top: 50px;
+        display: none;
       }
 
       @include mobile-small {
@@ -160,17 +159,17 @@ $mobile-small: 400px;
     .heroImgMobile {
       display: none;
 
-      @include mobile-small {
+      @include mobile {
         display: flex;
         width: 100%;
         padding-top: 50px;
         position: relative;
 
         .bgCircle {
-          @include mobile-small {
+          @include mobile {
             position: absolute;
             z-index: -1;
-            left: 0;
+            left: 30%;
             width: 270px;
             height: 270px;
             border-radius: 50%;
