@@ -46,7 +46,7 @@ export default function Home() {
         <meta property='og:title' content='LF Verissimo Portfolio | FullStack Developer' />
         <meta property='og:type' content='article' />
         <meta property='og:url' content='http://lfverissimo.com/' />
-        <meta property='og:image' content='http://lfverissimo.com/metaimg.png' />
+        <meta property='og:image' content='http://lfverissimo.com/twittermeta.png' />
         <meta property='og:description' content='LF Verissimo personal portfolio, fullstack developer, solving problems through code.' />
       </Head>
       {/* <Modal/> */}
