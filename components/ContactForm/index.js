@@ -78,23 +78,26 @@ function ContactForm() {
 
   return (
     <form className={styles.contactForm}>
-      <legend htmlFor='name'>Name</legend>
+      <label htmlFor='name'>Name</label>
       <input
         type='text'
         name='name'
+        id='name'
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
-      <legend htmlFor='e-mail'>E-mail</legend>
+      <label htmlFor='e-mail'>E-mail</label>
       <input
         type='text'
         name='e-mail'
+        id='e-mail'
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <legend htmlFor='message'>Message</legend>
+      <label htmlFor='message'>Message</label>
       <textarea
         name='message'
+        id='message'
         className={styles.textAreaInput}
         value={message}
         onChange={(e) => setMessage(e.target.value)}
@@ -102,8 +105,8 @@ function ContactForm() {
       <ReCAPTCHA
         sitekey={process.env.NEXT_PUBLIC_SITE_KEY}
         onChange={recaptchaVerify}
-        theme="dark"
-        hl="en"
+        theme='dark'
+        hl='en'
       />
       <div className={styles.buttonContainer}>
         <p>{status}</p>

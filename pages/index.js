@@ -32,6 +32,21 @@ export default function Home() {
       <Head>
         <title>LF Verissimo | FullStack Developer</title>
         <link rel='icon' href='/favicon.ico' />
+        <meta
+          name='description'
+          content='LF Verissimo personal portfolio, fullstack developer, solving problems through code.'
+        />
+        <meta name='robots' content='index, follow' />
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+
+        <meta name='twitter:card' value='summary'></meta>
+
+        <meta property='og:title' content='LF Verissimo Portfolio | FullStack Developer' />
+        <meta property='og:type' content='article' />
+        <meta property='og:url' content='http://lfverissimo.com/' />
+        <meta property='og:image' content='http://lfverissimo.com/metaimg.png' />
+        <meta property='og:description' content='LF Verissimo personal portfolio, fullstack developer, solving problems through code.' />
       </Head>
       {/* <Modal/> */}
 
@@ -264,51 +279,51 @@ export default function Home() {
           </div>
         </section>
         <div className={styles.mobileCarousel}>
-            <Carousel
-              defaultControlsConfig={{
-                nextButtonStyle: {
-                  display: 'none'
-                },
-                prevButtonStyle: {
-                  display: 'none'
-                },
-                pagingDotsStyle: {
-                  display: "none"
-                }
-              }}
-              cellAlign='left'
-              cellSpacing={30}
-              slideWidth='300px'
-              disableEdgeSwiping={true}
-              transitionMode='scroll'
-              // opacityScale={0.3}
-            >
-              <Card
-                imgSrc='/card-dragon.svg'
-                imgWidth={83}
-                imgHeight={83}
-                altImg='FullStack Applications'
-                cardTitle='FullStack Applications'
-                cardText='Build full application to fulfil your goals.'
-              />
-              <Card
-                imgSrc='/card-sword.svg'
-                imgWidth={83}
-                imgHeight={83}
-                altImg='Web Design'
-                cardTitle='Web Design'
-                cardText='Make your brand standout in the web.'
-              />
-              <Card
-                imgSrc='/card-quill.svg'
-                imgWidth={83}
-                imgHeight={83}
-                altImg='Mobile Applications'
-                cardTitle='Mobile Applications'
-                cardText='Make your idea available on Android and iOS devices'
-              />
-            </Carousel>
-          </div>
+          <Carousel
+            defaultControlsConfig={{
+              nextButtonStyle: {
+                display: 'none'
+              },
+              prevButtonStyle: {
+                display: 'none'
+              },
+              pagingDotsStyle: {
+                display: 'none'
+              }
+            }}
+            cellAlign='left'
+            cellSpacing={30}
+            slideWidth='300px'
+            disableEdgeSwiping={true}
+            transitionMode='scroll'
+            // opacityScale={0.3}
+          >
+            <Card
+              imgSrc='/card-dragon.svg'
+              imgWidth={83}
+              imgHeight={83}
+              altImg='FullStack Applications'
+              cardTitle='FullStack Applications'
+              cardText='Build full application to fulfil your goals.'
+            />
+            <Card
+              imgSrc='/card-sword.svg'
+              imgWidth={83}
+              imgHeight={83}
+              altImg='Web Design'
+              cardTitle='Web Design'
+              cardText='Make your brand standout in the web.'
+            />
+            <Card
+              imgSrc='/card-quill.svg'
+              imgWidth={83}
+              imgHeight={83}
+              altImg='Mobile Applications'
+              cardTitle='Mobile Applications'
+              cardText='Make your idea available on Android and iOS devices'
+            />
+          </Carousel>
+        </div>
         <section className={styles.contact} id='contact'>
           <h2>Contact</h2>
           <div className={styles.contactSocialLinks}>
@@ -351,6 +366,7 @@ export default function Home() {
                 src='/lf_verissimo_logo_dark.svg'
                 width={173}
                 height={21}
+                alt='LF Verissimo logo'
               />
               <div className={styles.socialIconsContainer}>
                 <a href='https://github.com/luizfverissimo' target='_black'>
@@ -360,6 +376,7 @@ export default function Home() {
                     width={24}
                     height={24}
                     className={styles.socialIcons}
+                    title='LF Verissimo Github'
                   />
                 </a>
                 <a
@@ -372,6 +389,7 @@ export default function Home() {
                     width={24}
                     height={24}
                     className={styles.socialIcons}
+                    title='LF Verissimo Linkedin'
                   />
                 </a>
               </div>
