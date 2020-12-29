@@ -41,6 +41,7 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
 
         <meta name='twitter:card' value='summary'></meta>
+        <meta name="twitter:image" content="http://lfverissimo.com/twittermeta.png"></meta>
 
         <meta property='og:title' content='LF Verissimo Portfolio | FullStack Developer' />
         <meta property='og:type' content='article' />
