@@ -59,6 +59,7 @@ $mobile: 1100px;
     cursor: pointer;
     margin-right: 20px;
     transition: all 0.2s ease;
+    outline: 0;
 
     @include mobile {
       margin-bottom: 20px;

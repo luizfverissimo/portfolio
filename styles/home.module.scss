@@ -430,7 +430,8 @@ $mobile-small: 450px;
     max-width: 1200px;
     display: flex;
     justify-content: space-between;
-
+    font-size: 16px;
+    font-weight: 300;
     @include mobile {
       flex-direction: column-reverse;
       justify-content: space-between;

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Lottie from 'react-lottie';
@@ -10,12 +11,21 @@ import ProjectLeft from '../components/ProjectLeft';
 import ProjectRight from '../components/ProjectRight';
 import Card from '../components/Card';
 import ContactForm from '../components/ContactForm';
+import ModalOffer from '../components/modalContent/ModalOffer';
+import ModalRpg from '../components/modalContent/ModalRpg';
 
 import styles from '../styles/home.module.scss';
 import programingAnimationData from '../public/lotties/programing.json';
 import scrollDownAnimationData from '../public/lotties/arrow-down.json';
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isOffer, setIsOffer] = useState(false);
+  const [isDice, setIsDice] = useState(false);
+  const [isTruco, setIsTruco] = useState(false);
+  const [isBoard, setIsBoard] = useState(false);
+  const [isRpg, setIsRpg] = useState(false);
+
   const lottieOptionPrograming = {
     loop: true,
     autoplay: true,
@@ -25,6 +35,24 @@ export default function Home() {
     loop: true,
     autoplay: true,
     animationData: scrollDownAnimationData
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+    setIsOffer(false);
+    setIsDice(false);
+    setIsTruco(false);
+    setIsBoard(false);
+    setIsRpg(false);
+  };
+
+  const openProject = (project) => {
+    setIsOpen(true);
+    if (project === 'offer') setIsOffer(true);
+    if (project === 'dice') setIsDice(true);
+    if (project === 'truco') setIsTruco(true);
+    if (project === 'board') setIsBoard(true);
+    if (project === 'rpg') setIsRpg(true);
   };
 
   return (
@@ -37,19 +65,39 @@ export default function Home() {
           content='LF Verissimo personal portfolio, fullstack developer, solving problems through code.'
         />
         <meta name='robots' content='index, follow' />
-        <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+        <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
 
         <meta name='twitter:card' value='summary'></meta>
-        <meta name="twitter:image" content="http://lfverissimo.com/twittermeta.png"></meta>
+        <meta
+          name='twitter:image'
+          content='http://lfverissimo.com/twittermeta.png'
+        ></meta>
 
-        <meta property='og:title' content='LF Verissimo Portfolio | FullStack Developer' />
+        <meta
+          property='og:title'
+          content='LF Verissimo Portfolio | FullStack Developer'
+        />
         <meta property='og:type' content='article' />
         <meta property='og:url' content='http://lfverissimo.com/' />
-        <meta property='og:image' content='http://lfverissimo.com/twittermeta.png' />
-        <meta property='og:description' content='LF Verissimo personal portfolio, fullstack developer, solving problems through code.' />
+        <meta
+          property='og:image'
+          content='http://lfverissimo.com/twittermeta.png'
+        />
+        <meta
+          property='og:description'
+          content='LF Verissimo personal portfolio, fullstack developer, solving problems through code.'
+        />
       </Head>
-      {/* <Modal/> */}
+      {isOpen && (
+        <Modal onCLickCloseModal={closeModal}>
+          {isOffer && <ModalOffer/>}
+          {isDice && <h1>Is Dice</h1>}
+          {isTruco && <h1>Is Truco</h1>}
+          {isBoard && <h1>Is Board</h1>}
+          {isRpg && <ModalRpg/>}
+        </Modal>
+      )}
 
       <main className={styles.content}>
         <section className={styles.header} id='header'>
@@ -114,7 +162,7 @@ export default function Home() {
             imgWidth={785}
             imgHeight={400}
             codeHref='https://github.com/luizfverissimo/offer-aggregator'
-            onCLickOpenProject={() => {}}
+            onCLickOpenProject={() => openProject('offer')}
             reactIcon
             nodeIcon
           />
@@ -129,7 +177,7 @@ export default function Home() {
             imgWidth={598}
             imgHeight={400}
             codeHref='https://github.com/luizfverissimo/dice-roller'
-            onCLickOpenProject={() => {}}
+            onCLickOpenProject={() => openProject('dice')}
             reactIcon
             isApp
           />
@@ -144,7 +192,7 @@ export default function Home() {
             imgWidth={617}
             imgHeight={400}
             codeHref='https://github.com/luizfverissimo/placar-truco'
-            onCLickOpenProject={() => {}}
+            onCLickOpenProject={() => openProject('truco')}
             reactIcon
             isApp
           />
@@ -159,7 +207,7 @@ export default function Home() {
             imgWidth={615}
             imgHeight={400}
             codeHref='https://github.com/luizfverissimo/placar-truco'
-            onCLickOpenProject={() => {}}
+            onCLickOpenProject={() => openProject('board')}
             reactIcon
             isApp
           />
@@ -175,7 +223,7 @@ export default function Home() {
             imgWidth={785}
             imgHeight={400}
             codeHref='https://github.com/luizfverissimo/RPGBotDiscordJS'
-            onCLickOpenProject={() => {}}
+            onCLickOpenProject={() => openProject('rpg')}
             nodeIcon
             discordIcon
             databaseIcon
