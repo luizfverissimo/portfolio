@@ -14,14 +14,14 @@ function ModalOffer() {
               target='_black'
               className={styles.btn}
             >
-              Visit site
+              Visit the site
             </a>
             <a
               href='https://offers-aggregator-git-internationalization.luizfverissimo.vercel.app/admin'
               target='_black'
               className={styles.btn}
             >
-              Visit Admin Dashboard
+              Visit the Admin Dashboard
             </a>
           </div>
         </div>
