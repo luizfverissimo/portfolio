@@ -118,7 +118,7 @@ function ProjectRight({
                 />
                 Launch the {isApp ? 'app' : 'site'}
               </button>
-              <a href={codeHref} target="_blank" className={styles.projectButton}>
+              <a href={codeHref} target="_blank" rel="noopener" className={styles.projectButton}>
                 <FontAwesomeIcon
                   icon={faGithub}
                   color='#fafafa'

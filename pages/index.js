@@ -455,6 +455,7 @@ export default function Home() {
               <a
                 href='https://www.privacypolicies.com/live/8d2198f3-da49-45d2-b9f8-0ead02c57152'
                 target='_black'
+                rel="noopener"
               >
                 Terms and Conditions
               </a>
