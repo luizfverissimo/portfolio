@@ -233,6 +233,7 @@ export default function Home() {
             className={styles.projectsBtn}
             href='https://github.com/luizfverissimo?tab=repositories'
             target='_black'
+            rel='noopener'
           >
             <FontAwesomeIcon
               icon={faGithub}
@@ -380,6 +381,7 @@ export default function Home() {
             <a
               href='https://github.com/luizfverissimo'
               target='_black'
+              rel='noopener'
               className={styles.socialLinks}
             >
               <FontAwesomeIcon
@@ -394,6 +396,7 @@ export default function Home() {
             <a
               href='https://www.linkedin.com/in/luiz-fernando-veríssimo-485323164/'
               target='_black'
+              rel='noopener'
               className={styles.socialLinks}
             >
               <FontAwesomeIcon
@@ -419,7 +422,11 @@ export default function Home() {
                 alt='LF Verissimo logo'
               />
               <div className={styles.socialIconsContainer}>
-                <a href='https://github.com/luizfverissimo' target='_black'>
+                <a
+                  href='https://github.com/luizfverissimo'
+                  target='_black'
+                  rel='noopener'
+                >
                   <FontAwesomeIcon
                     icon={faGithub}
                     color='#fafafa'
@@ -432,6 +439,7 @@ export default function Home() {
                 <a
                   href='https://www.linkedin.com/in/luiz-fernando-veríssimo-485323164/'
                   target='_black'
+                  rel='noopener'
                 >
                   <FontAwesomeIcon
                     icon={faLinkedin}
@@ -455,7 +463,7 @@ export default function Home() {
               <a
                 href='https://www.privacypolicies.com/live/8d2198f3-da49-45d2-b9f8-0ead02c57152'
                 target='_black'
-                rel="noopener"
+                rel='noopener'
               >
                 Terms and Conditions
               </a>
