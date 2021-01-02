@@ -25,6 +25,7 @@ export default function Home() {
   const [isTruco, setIsTruco] = useState(false);
   const [isBoard, setIsBoard] = useState(false);
   const [isRpg, setIsRpg] = useState(false);
+  const [isPrivacy, setIsPrivacy] = useState(false);
 
   const lottieOptionPrograming = {
     loop: true,
@@ -91,11 +92,11 @@ export default function Home() {
       </Head>
       {isOpen && (
         <Modal onCLickCloseModal={closeModal}>
-          {isOffer && <ModalOffer/>}
+          {isOffer && <ModalOffer />}
           {isDice && <h1>Is Dice</h1>}
           {isTruco && <h1>Is Truco</h1>}
           {isBoard && <h1>Is Board</h1>}
-          {isRpg && <ModalRpg/>}
+          {isRpg && <ModalRpg />}
         </Modal>
       )}
 
@@ -451,8 +452,18 @@ export default function Home() {
               <a href='#contact'>Contact</a>
             </div>
             <div className={styles.footerNavigation}>
-              <a>Terms of use</a>
-              <a>Privacy Police</a>
+              <a
+                href='https://www.privacypolicies.com/live/8d2198f3-da49-45d2-b9f8-0ead02c57152'
+                target='_black'
+              >
+                Terms and Conditions
+              </a>
+              <a
+                href='https://www.privacypolicies.com/live/28fc87f4-e550-4837-8bcb-df82abbc62fd'
+                target='_black'
+              >
+                Privacy Police
+              </a>
               <a>
                 Resources used
                 <br /> in this site
