@@ -13,6 +13,7 @@ import Card from '../components/Card';
 import ContactForm from '../components/ContactForm';
 import ModalOffer from '../components/modalContent/ModalOffer';
 import ModalRpg from '../components/modalContent/ModalRpg';
+import ModalResources from '../components/modalContent/ModalResources';
 
 import styles from '../styles/home.module.scss';
 import programingAnimationData from '../public/lotties/programing.json';
@@ -25,7 +26,7 @@ export default function Home() {
   const [isTruco, setIsTruco] = useState(false);
   const [isBoard, setIsBoard] = useState(false);
   const [isRpg, setIsRpg] = useState(false);
-  const [isPrivacy, setIsPrivacy] = useState(false);
+  const [isResources, setIsResources] = useState(false);
 
   const lottieOptionPrograming = {
     loop: true,
@@ -45,6 +46,7 @@ export default function Home() {
     setIsTruco(false);
     setIsBoard(false);
     setIsRpg(false);
+    setIsResources(false);
   };
 
   const openProject = (project) => {
@@ -54,6 +56,7 @@ export default function Home() {
     if (project === 'truco') setIsTruco(true);
     if (project === 'board') setIsBoard(true);
     if (project === 'rpg') setIsRpg(true);
+    if (project === 'resources') setIsResources(true);
   };
 
   return (
@@ -97,6 +100,7 @@ export default function Home() {
           {isTruco && <h1>Is Truco</h1>}
           {isBoard && <h1>Is Board</h1>}
           {isRpg && <ModalRpg />}
+          {isResources && <ModalResources />}
         </Modal>
       )}
 
@@ -470,10 +474,11 @@ export default function Home() {
               <a
                 href='https://www.privacypolicies.com/live/28fc87f4-e550-4837-8bcb-df82abbc62fd'
                 target='_black'
+                rel='noopener'
               >
                 Privacy Police
               </a>
-              <a>
+              <a onClick={() => openProject('resources')}>
                 Resources used
                 <br /> in this site
               </a>
