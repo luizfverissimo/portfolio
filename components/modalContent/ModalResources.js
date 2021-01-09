@@ -6,6 +6,24 @@ function ModalResources() {
     <div className={styles.content}>
       <h4 className={styles.title}>Resources used in this site</h4>
       <p>
+        <strong>Lottie animations</strong>
+      </p>
+      <a
+        href='https://lottiefiles.com/17343-programming'
+        target='_blank'
+        rel='noopener'
+      >
+        Programming by Shivsagar
+      </a>
+      <a
+        href='https://lottiefiles.com/28571-arrow-down'
+        target='_blank'
+        rel='noopener'
+      >
+        Arrow down by Hüseyin Gayıran
+      </a>
+      
+      <p>
         <strong>Noun Project icons</strong>
       </p>
       <a

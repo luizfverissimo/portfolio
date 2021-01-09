@@ -26,6 +26,15 @@ $mobile-small: 450px;
     line-height: 2rem;
   }
 
+  a {
+    line-height: 1.5rem;
+    &:hover {
+      color: var(--violet);
+      text-decoration: underline;
+    }
+  }
+
+
   .title {
     font-weight: bold;
     font-size: 22px;
