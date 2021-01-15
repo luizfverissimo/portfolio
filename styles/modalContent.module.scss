@@ -84,7 +84,10 @@ $mobile-small: 450px;
 
     &:hover {
       background-color: var(--pink);
+      text-decoration: none;
+      color: var(--white);
     }
+    
   }
 
   strong {

@@ -222,7 +222,7 @@ export default function Home() {
             titleFirstLine='RPG'
             titleSecondLine='Discord Chatbot'
             subTitle='Backend Project'
-            projectInfo='Text-based RPG created in a ChatBot for Discord. Bot created using Node.js, the Discord.js library and Mongoose for database management.'
+            projectInfo='Text-based RPG game created in a ChatBot for Discord. Bot created using Node.js, the Discord.js library and Mongoose for database management.'
             imgSrc='/discordfull.png'
             altImg='PrintScreen of RPG Discord Chatbot'
             imgWidth={785}
