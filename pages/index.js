@@ -14,6 +14,7 @@ import ContactForm from '../components/ContactForm';
 import ModalOffer from '../components/modalContent/ModalOffer';
 import ModalRpg from '../components/modalContent/ModalRpg';
 import ModalResources from '../components/modalContent/ModalResources';
+import ModalDice from '../components/modalContent/ModalDice';
 
 import styles from '../styles/home.module.scss';
 import programingAnimationData from '../public/lotties/programing.json';
@@ -96,7 +97,7 @@ export default function Home() {
       {isOpen && (
         <Modal onCLickCloseModal={closeModal}>
           {isOffer && <ModalOffer />}
-          {isDice && <h1>Is Dice</h1>}
+          {isDice && <ModalDice/>}
           {isTruco && <h1>Is Truco</h1>}
           {isBoard && <h1>Is Board</h1>}
           {isRpg && <ModalRpg />}
