@@ -12,6 +12,7 @@ function ModalTruco() {
       <a
               href='https://play.google.com/store/apps/details?id=com.luizfverissimo.placartruco'
               target='_black'
+              rel="noopener"
               className={styles.btn}
             >
               <FontAwesomeIcon

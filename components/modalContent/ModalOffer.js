@@ -12,6 +12,7 @@ function ModalOffer() {
             <a
               href='https://offers-aggregator-git-internationalization.luizfverissimo.vercel.app'
               target='_black'
+              rel="noopener"
               className={styles.btn}
             >
               Visit the site
@@ -19,6 +20,7 @@ function ModalOffer() {
             <a
               href='https://offers-aggregator-git-internationalization.luizfverissimo.vercel.app/admin'
               target='_black'
+              rel="noopener"
               className={styles.btn}
             >
               Visit the Admin Dashboard
@@ -31,6 +33,7 @@ function ModalOffer() {
             <a
               href='https://offers-aggregator.vercel.app'
               target='_black'
+              rel="noopener"
               className={styles.btn}
             >
               Visite o site
@@ -38,6 +41,7 @@ function ModalOffer() {
             <a
               href='https://offers-aggregator.vercel.app/admin'
               target='_black'
+              rel="noopener"
               className={styles.btn}
             >
               Visit o Painel de Administração
