@@ -23,6 +23,10 @@ $mobile: 1100px;
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
