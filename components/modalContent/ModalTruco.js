@@ -7,7 +7,7 @@ import styles from '../../styles/modalContent.module.scss';
 function ModalTruco() {
   return (
     <div className={styles.content}>
-      <h4 className={styles.title}>TrucoScoretracker</h4>
+      <h4 className={styles.title}>Truco Scoretracker</h4>
       <p>The application is in pt-BR, will be translate to English soon.</p>
       <a
               href='https://play.google.com/store/apps/details?id=com.luizfverissimo.placartruco'
