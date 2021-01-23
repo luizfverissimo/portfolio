@@ -93,7 +93,7 @@ $mobile: 1100px;
   justify-content: center;
 
   @include mobile{
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
   }
 

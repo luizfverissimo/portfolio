@@ -257,7 +257,7 @@ export default function Home() {
             <div className={styles.descriptionText}>
               <h2 className={styles.aboutMeTitle}>About me</h2>
               <p>
-                I’m a self-taught fullstack developer, a geek developer
+                I’m a self-taught fullstack JavaScript developer, a geek developer
                 exploring programming dungeons!
               </p>
               <div className={styles.likesButtonsContainer}>
