@@ -110,6 +110,7 @@ $mobile: 1100px;
       align-items: center;
       transition: all 0.2s ease;
       outline: none;
+      cursor: pointer;
 
       .iconSend {
         margin-right: 10px;
@@ -118,6 +119,7 @@ $mobile: 1100px;
       &:hover {
         background-color: var(--white);
         color: var(--pink);
+        transform: scale(1.05);
 
         .iconSend {
           color: var(--pink) !important;

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Lottie from 'react-lottie';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Carousel from 'nuka-carousel';
 
@@ -98,8 +98,8 @@ export default function Home() {
       {isOpen && (
         <Modal onCLickCloseModal={closeModal}>
           {isOffer && <ModalOffer />}
-          {isDice && <ModalDice/>}
-          {isTruco && <ModalTruco/>}
+          {isDice && <ModalDice />}
+          {isTruco && <ModalTruco />}
           {isBoard && <h1>Is Board</h1>}
           {isRpg && <ModalRpg />}
           {isResources && <ModalResources />}
@@ -128,11 +128,11 @@ export default function Home() {
         <section className={styles.hero}>
           <div className={styles.heroContent}>
             <div className={styles.heroText}>
-              <h1>
+              <h1 data-aos='fade-down'>
                 Hello!
                 <br /> I’m LF Verissimo,
               </h1>
-              <p>Solving problems through code.</p>
+              <p data-aos='fade-up'>Solving problems through code.</p>
             </div>
             <div className={styles.heroImg}>
               <Lottie
@@ -257,42 +257,62 @@ export default function Home() {
             <div className={styles.descriptionText}>
               <h2 className={styles.aboutMeTitle}>About me</h2>
               <p>
-                I’m a self-taught fullstack JavaScript developer, a geek developer
-                exploring programming dungeons!
+                I’m a self-taught fullstack JavaScript developer, a geek
+                developer exploring programming dungeons!
               </p>
               <div className={styles.likesButtonsContainer}>
-                <Image
-                  src='/dice-icon.svg'
-                  width={52}
-                  height={52}
-                  className={styles.likesBtn}
-                  title='RPG Master'
-                  alt='RPG Master icon'
-                />
-                <Image
-                  src='/sw-icon.svg'
-                  width={52}
-                  height={52}
-                  className={styles.likesBtn}
-                  title='Star Wars Fan'
-                  alt='Star Wars Fan icon'
-                />
-                <Image
-                  src='/game-icon.svg'
-                  width={52}
-                  height={52}
-                  className={styles.likesBtn}
-                  title='FPS Player'
-                  alt='FPS Player icon'
-                />
-                <Image
-                  src='/bg-icon.svg'
-                  width={52}
-                  height={52}
-                  className={styles.likesBtn}
-                  title='Boardgame Player and Collector'
-                  alt='Boardgame Player and Collector icon'
-                />
+                <div className={styles.imageContainer}>
+                  <Image
+                    data-aos='zoom-in'
+                    data-aos-duration='500'
+                    data-aos-delay='300'
+                    src='/dice-icon.svg'
+                    width={52}
+                    height={52}
+                    className={styles.likesBtn}
+                    title='RPG Master'
+                    alt='RPG Master icon'
+                  />
+                </div>
+                <div className={styles.imageContainer}>
+                  <Image
+                    data-aos='zoom-in'
+                    data-aos-duration='500'
+                    data-aos-delay='350'
+                    src='/sw-icon.svg'
+                    width={52}
+                    height={52}
+                    className={styles.likesBtn}
+                    title='Star Wars Fan'
+                    alt='Star Wars Fan icon'
+                  />
+                </div>
+                <div className={styles.imageContainer}>
+                  <Image
+                    data-aos='zoom-in'
+                    data-aos-duration='500'
+                    data-aos-delay='400'
+                    src='/game-icon.svg'
+                    width={52}
+                    height={52}
+                    className={styles.likesBtn}
+                    title='FPS Player'
+                    alt='FPS Player icon'
+                  />
+                </div>
+                <div className={styles.imageContainer}>
+                  <Image
+                    data-aos='zoom-in'
+                    data-aos-duration='500'
+                    data-aos-delay='500'
+                    src='/bg-icon.svg'
+                    width={52}
+                    height={52}
+                    className={styles.likesBtn}
+                    title='Boardgame Player and Collector'
+                    alt='Boardgame Player and Collector icon'
+                  />
+                </div>
               </div>
             </div>
             <div className={styles.avatarContainer}>
@@ -393,8 +413,8 @@ export default function Home() {
               <FontAwesomeIcon
                 icon={faGithub}
                 color='#9D0191'
-                width={54}
-                height={54}
+                width={36}
+                height={36}
                 className={styles.socialIcons}
               />
               <p>/luizfverissimo</p>
@@ -408,11 +428,27 @@ export default function Home() {
               <FontAwesomeIcon
                 icon={faLinkedin}
                 color='#9D0191'
-                width={54}
-                height={54}
+                width={36}
+                height={36}
                 className={styles.socialIcons}
               />
               <p>/luizfverissimo</p>
+            </a>
+
+            <a
+              href='https://play.google.com/store/apps/developer?id=LF+Verissimo'
+              target='_black'
+              rel='noopener'
+              className={styles.socialLinks}
+            >
+              <FontAwesomeIcon
+                icon={faGooglePlay}
+                color='#9D0191'
+                width={36}
+                height={36}
+                className={styles.socialIcons}
+              />
+              <p>/LF Verissimo</p>
             </a>
           </div>
           <ContactForm />

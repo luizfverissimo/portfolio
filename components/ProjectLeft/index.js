@@ -50,7 +50,7 @@ function ProjectLeft({
     <div>
       <div className={styles.projectRow}>
         <div className={backgroundColor}>
-          <div className={styles.rowLeftText}>
+          <div data-aos="fade-right" className={styles.rowLeftText}>
             <h2 className={styles.projectTitle}>
               {titleFirstLine} <br /> {titleSecondLine}
             </h2>
