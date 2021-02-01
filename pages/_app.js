@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
       duration: 1000,
       easing: "ease",
       once: true,
-      throttleDelay: 1000,
+      throttleDelay: 500,
     })
   }, [])
 
