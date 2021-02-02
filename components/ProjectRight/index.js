@@ -55,7 +55,7 @@ function ProjectRight({
           </div>
         </div>
         <div className={backgroundColor}>
-          <div data-aos="fade-left" className={styles.rowRightText}>
+          <div className={styles.rowRightText}>
             <h2 className={styles.projectTitle}>
               {titleFirstLine} <br /> {titleSecondLine}
             </h2>

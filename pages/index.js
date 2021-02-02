@@ -128,11 +128,11 @@ export default function Home() {
         <section className={styles.hero}>
           <div className={styles.heroContent}>
             <div className={styles.heroText}>
-              <h1 data-aos='fade-down'>
+              <h1>
                 Hello!
                 <br /> I’m LF Verissimo,
               </h1>
-              <p data-aos='fade-up'>Solving problems through code.</p>
+              <p>Solving problems through code.</p>
             </div>
             <div className={styles.heroImg}>
               <Lottie
@@ -263,9 +263,6 @@ export default function Home() {
               <div className={styles.likesButtonsContainer}>
                 <div className={styles.imageContainer}>
                   <Image
-                    data-aos='zoom-in'
-                    data-aos-duration='500'
-                    data-aos-delay='300'
                     src='/dice-icon.svg'
                     width={52}
                     height={52}
@@ -276,9 +273,6 @@ export default function Home() {
                 </div>
                 <div className={styles.imageContainer}>
                   <Image
-                    data-aos='zoom-in'
-                    data-aos-duration='500'
-                    data-aos-delay='350'
                     src='/sw-icon.svg'
                     width={52}
                     height={52}
@@ -289,9 +283,6 @@ export default function Home() {
                 </div>
                 <div className={styles.imageContainer}>
                   <Image
-                    data-aos='zoom-in'
-                    data-aos-duration='500'
-                    data-aos-delay='400'
                     src='/game-icon.svg'
                     width={52}
                     height={52}
@@ -302,9 +293,6 @@ export default function Home() {
                 </div>
                 <div className={styles.imageContainer}>
                   <Image
-                    data-aos='zoom-in'
-                    data-aos-duration='500'
-                    data-aos-delay='500'
                     src='/bg-icon.svg'
                     width={52}
                     height={52}
